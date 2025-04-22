@@ -20,7 +20,7 @@ jobs:
                     script: |
                         mkdir -p /home/ubuntu/web-nueva
             - name: Sincronizar archivos con el servidor
-              uses: contention/rsync-deployments@v2.0.0
+              uses: burnett01/rsync-deployments@7.0.2
               with:
                     switches: "-avz --delete"
                     path: ./
