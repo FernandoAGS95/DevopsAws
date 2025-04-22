@@ -20,7 +20,7 @@ jobs:
                     script: |
                         mkdir -p /home/ubuntu/web-nueva
             - name: Sincronizar archivos con el servidor
-              uses: burnet01/rsync-deployments@v7.0.2
+              uses: contention/rsync-deployments@v2.0.0
               with:
                     switches: "-avz --delete"
                     path: ./
@@ -30,7 +30,7 @@ jobs:
                     remote_key: ${{ secrets.PRIVATE_KEY }}
                     remote_port: ${{ secrets.PORT }}
             - name: Entrar a carpeta web-nueva
-              uses: appleboy/ssh-actions@v1
+              uses: appleboy/ssh-action@v1
               with:
                     host: ${{ secrets.IP_SERVER }}
                     username: ${{ secrets.USERNAME}}
